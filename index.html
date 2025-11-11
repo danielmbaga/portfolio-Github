@@ -1,18 +1,20 @@
-index.html
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raoul Kaldjob - IT Technician Portfolio</title>
+    <title>Raoul Kaldjob - Technicien Informatique</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
         }
         
         * {
@@ -24,8 +26,13 @@ index.html
         
         body {
             line-height: 1.6;
-            color: #333;
-            background: #f9f9f9;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
         }
         
         .container {
@@ -36,32 +43,27 @@ index.html
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
             position: relative;
+            overflow: hidden;
         }
         
-        .profile-header {
+        .header-content {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 40px;
         }
         
-        .profile-img-container {
-            position: relative;
-            width: 220px;
-            height: 220px;
-        }
-        
         .profile-img {
-            width: 100%;
-            height: 100%;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid rgba(255,255,255,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .header-text {
@@ -76,7 +78,7 @@ index.html
         
         .title {
             font-size: 1.2rem;
-            color: var(--light);
+            color: var(--light-color);
             margin-bottom: 20px;
             font-weight: 300;
         }
@@ -95,13 +97,13 @@ index.html
         }
         
         .contact-item i {
-            color: var(--secondary);
+            color: var(--secondary-color);
         }
         
         /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -116,7 +118,7 @@ index.html
         
         .logo {
             font-weight: 700;
-            color: var(--primary);
+            color: var(--primary-color);
             font-size: 1.2rem;
         }
         
@@ -130,13 +132,13 @@ index.html
         }
         
         .nav-links a {
-            color: var(--dark);
+            color: var(--dark-color);
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .nav-links a:hover {
-            color: var(--secondary);
+            color: var(--secondary-color);
         }
         
         /* Sections */
@@ -152,7 +154,7 @@ index.html
         
         .section-title h2 {
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--primary-color);
             display: inline-block;
             padding-bottom: 10px;
         }
@@ -162,7 +164,7 @@ index.html
             position: absolute;
             width: 60px;
             height: 3px;
-            background: var(--secondary);
+            background-color: var(--secondary-color);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -170,13 +172,14 @@ index.html
         
         /* About Section */
         #about {
-            background: white;
+            background-color: white;
         }
         
         .about-content {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
+            align-items: center;
         }
         
         .about-text {
@@ -184,22 +187,18 @@ index.html
             min-width: 300px;
         }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+        .skills {
+            flex: 1;
+            min-width: 300px;
         }
         
         .skill-category {
-            background: #f5f7fa;
-            padding: 25px;
-            border-radius: 8px;
+            margin-bottom: 30px;
         }
         
         .skill-category h3 {
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--primary-color);
         }
         
         .skill-list {
@@ -209,7 +208,7 @@ index.html
         }
         
         .skill-item {
-            background: var(--light);
+            background-color: var(--light-color);
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -217,7 +216,7 @@ index.html
         
         /* Experience Section */
         #experience {
-            background: #f5f7fa;
+            background-color: #f5f7fa;
         }
         
         .timeline {
@@ -231,7 +230,7 @@ index.html
             content: '';
             position: absolute;
             width: 2px;
-            background: var(--secondary);
+            background-color: var(--secondary-color);
             top: 0;
             bottom: 0;
             left: 20px;
@@ -240,10 +239,10 @@ index.html
         .timeline-item {
             position: relative;
             margin-bottom: 40px;
-            background: white;
-            padding: 25px;
+            background-color: white;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
         .timeline-item::before {
@@ -251,18 +250,18 @@ index.html
             position: absolute;
             width: 20px;
             height: 20px;
-            background: white;
-            border: 3px solid var(--secondary);
+            background-color: white;
+            border: 3px solid var(--secondary-color);
             border-radius: 50%;
             left: -40px;
-            top: 25px;
+            top: 20px;
         }
         
         .timeline-date {
             position: absolute;
             left: -150px;
-            top: 25px;
-            color: #7f8c8d;
+            top: 20px;
+            color: var(--text-light);
             font-size: 0.9rem;
             width: 120px;
             text-align: right;
@@ -270,14 +269,18 @@ index.html
         
         .timeline-title {
             font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--primary);
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
         
         .timeline-subtitle {
             font-weight: 500;
-            color: var(--secondary);
+            color: var(--secondary-color);
             margin-bottom: 15px;
+        }
+        
+        .timeline-description {
+            color: var(--text-light);
         }
         
         .timeline-description ul {
@@ -290,7 +293,7 @@ index.html
         
         /* Education Section */
         #education {
-            background: white;
+            background-color: white;
         }
         
         .education-grid {
@@ -300,48 +303,48 @@ index.html
         }
         
         .education-card {
-            background: #f5f7fa;
+            background-color: #f5f7fa;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .education-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .education-title {
             font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--primary);
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
         
         .education-school {
             font-weight: 500;
-            color: var(--secondary);
+            color: var(--secondary-color);
             margin-bottom: 10px;
         }
         
         .education-date {
-            color: #7f8c8d;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
         
         /* Contact Section */
         #contact {
-            background: var(--primary);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
         }
         
-        .contact-title h2 {
+        .contact-title {
             color: white;
         }
         
         .contact-title h2::after {
-            background: white;
+            background-color: white;
         }
         
         .contact-methods {
@@ -353,7 +356,7 @@ index.html
         }
         
         .contact-method {
-            background: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 8px;
             width: 250px;
@@ -367,12 +370,20 @@ index.html
         .contact-method i {
             font-size: 2rem;
             margin-bottom: 15px;
-            color: var(--secondary);
+            color: var(--secondary-color);
+        }
+        
+        .contact-method h3 {
+            margin-bottom: 10px;
+        }
+        
+        .contact-method p {
+            color: var(--light-color);
         }
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background-color: var(--dark-color);
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -393,12 +404,12 @@ index.html
         }
         
         .social-links a:hover {
-            color: var(--secondary);
+            color: var(--secondary-color);
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .profile-header {
+            .header-content {
                 flex-direction: column;
                 text-align: center;
             }
@@ -439,18 +450,16 @@ index.html
 <body>
     <header>
         <div class="container">
-            <div class="profile-header">
-                <div class="profile-img-container">
-                    <img src="raoulphoto.jpg" alt="Raoul Kaldjob" class="profile-img">
-                </div>
+            <div class="header-content">
+                <img src="C:\Users\Sofien\OneDrive\Pictures\raoulphoto.jpg">
                 <div class="header-text">
                     <h1>Raoul Kaldjob</h1>
-                    <p class="title">IT Technician | Technical Support | IT Infrastructure</p>
-                    <p>IT professional with 3+ years of experience in technical support and IT infrastructure management. Expert in troubleshooting, system maintenance, and delivering exceptional user support.</p>
+                    <p class="title">Technicien Informatique | Support Technique | Gestion d'Infrastructures IT</p>
+                    <p>Technicien informatique avec plus de 3 ans d'expérience en support technique et gestion d'infrastructures IT. Expert en résolution de problèmes, maintenance système et support utilisateur.</p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Tunis, Tunisia</span>
+                            <span>Tunis, Tunisie</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -470,9 +479,9 @@ index.html
         <div class="container nav-container">
             <div class="logo">RAOUL K.</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#education">Formation</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -481,39 +490,39 @@ index.html
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Professional Profile</h2>
+                <h2>À propos de moi</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>IT Technician with over 3 years of experience in technical support and IT infrastructure management. Recognized for effectively managing critical incidents and maintaining excellent customer service standards.</p>
-                    <p>Seeking an exciting opportunity in Canada to leverage my technical expertise and IT support skills in a challenging environment that promotes professional growth.</p>
+                    <p>Technicien informatique avec plus de 3 ans d'expérience en support technique et gestion d'infrastructures IT. Expert en résolution de problèmes, maintenance système et support utilisateur.</p>
+                    <p>Reconnu pour ma capacité à gérer efficacement les incidents critiques et à maintenir un excellent niveau de service client. À la recherche d'une opportunité stimulante au Canada pour mettre à profit mon expertise technique et mes compétences en support informatique.</p>
                 </div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Systems & Networks</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Windows & Linux</span>
-                        <span class="skill-item">Active Directory</span>
-                        <span class="skill-item">TCP/IP, VPN</span>
-                        <span class="skill-item">LAN Management</span>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h3>Systèmes et Réseaux</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Windows et Linux</span>
+                            <span class="skill-item">Active Directory</span>
+                            <span class="skill-item">TCP/IP, VPN</span>
+                            <span class="skill-item">Gestion LAN</span>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Applications</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Office 365</span>
-                        <span class="skill-item">SAP</span>
-                        <span class="skill-item">GLPI</span>
-                        <span class="skill-item">Centreon</span>
-                        <span class="skill-item">ProVconnect</span>
+                    <div class="skill-category">
+                        <h3>Outils et Applications</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Office 365</span>
+                            <span class="skill-item">SAP</span>
+                            <span class="skill-item">GLPI</span>
+                            <span class="skill-item">Centreon</span>
+                            <span class="skill-item">ProVconnect</span>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">French (Native)</span>
-                        <span class="skill-item">English (Professional)</span>
+                    <div class="skill-category">
+                        <h3>Langues</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Français (Langue maternelle)</span>
+                            <span class="skill-item">Anglais (Professionnel)</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -523,43 +532,43 @@ index.html
     <section id="experience">
         <div class="container">
             <div class="section-title">
-                <h2>Professional Experience</h2>
+                <h2>Expérience Professionnelle</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Jan 2024 - Present</div>
+                    <div class="timeline-date">Jan 2024 - Présent</div>
                     <h3 class="timeline-title">SEBAIXIA</h3>
-                    <h4 class="timeline-subtitle">IT Technician</h4>
+                    <h4 class="timeline-subtitle">Technicien informatique</h4>
                     <div class="timeline-description">
                         <ul>
-                            <li>Handle 20+ daily user support tickets with 95% resolution rate</li>
-                            <li>Key contributor in project restoring 2,000 workstations after CrowdStrike update failure</li>
-                            <li>Monitor server health using Centreon, producing daily performance reports</li>
-                            <li>Configure and troubleshoot printers in Linux environment</li>
+                            <li>Gérer au quotidien +20 tickets de support utilisateur</li>
+                            <li>Participer à un projet majeur de réparation de 2000 postes affectés par une mise à jour CrowdStrike</li>
+                            <li>Superviser les serveurs via Centreon et produire un rapport quotidien matinal</li>
+                            <li>Configurer des imprimantes et gérer des flux sous environnement Linux</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Jan 2020 - Feb 2021</div>
+                    <div class="timeline-date">Jan 2020 - Fév 2021</div>
                     <h3 class="timeline-title">COMUNIK CRM SARL</h3>
-                    <h4 class="timeline-subtitle">Technical Support Specialist</h4>
+                    <h4 class="timeline-subtitle">Support technique</h4>
                     <div class="timeline-description">
                         <ul>
-                            <li>Deployed and maintained client server infrastructure</li>
-                            <li>Implemented security enhancements including BitLocker encryption</li>
-                            <li>Managed user accounts and access permissions across systems</li>
+                            <li>Gérer le déploiement et la maintenance des serveurs clients</li>
+                            <li>Implémenter des mesures de sécurité (BitLocker, OneDrive)</li>
+                            <li>Administrer les comptes utilisateurs et gérer les accès</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Jun 2018 - May 2019</div>
+                    <div class="timeline-date">Juin 2018 - Mai 2019</div>
                     <h3 class="timeline-title">INTELCIA SA</h3>
-                    <h4 class="timeline-subtitle">Customer Support Advisor</h4>
+                    <h4 class="timeline-subtitle">Conseiller Clientèle</h4>
                     <div class="timeline-description">
                         <ul>
-                            <li>Resolved 20+ daily technical support calls for SFR subscribers</li>
-                            <li>Troubleshot and restored TV/Internet/phone services</li>
-                            <li>Promoted value-added services to customers</li>
+                            <li>Répondre aux appels et satisfaire les demandes des abonnés SFR : Environ 20 appels/j résolus à +90%</li>
+                            <li>Rétablir les services (TV-Internet-téléphone) sur la BOX SFR en cas de panne</li>
+                            <li>Promouvoir les offres télévisées auprès des abonnés intéressés</li>
                         </ul>
                     </div>
                 </div>
@@ -570,18 +579,18 @@ index.html
     <section id="education">
         <div class="container">
             <div class="section-title">
-                <h2>Education</h2>
+                <h2>Formation</h2>
             </div>
             <div class="education-grid">
                 <div class="education-card">
-                    <h3 class="education-title">Bachelor's in Networking & Cybersecurity</h3>
-                    <p class="education-school">CFT-3IL Engineers, Tunis</p>
-                    <p class="education-date">2020 - 2021</p>
+                    <h3 class="education-title">Bachelor en Réseaux et Cybersécurité</h3>
+                    <p class="education-school">CFT-3ILINGENIEURS, Tunis</p>
+                    <p class="education-date">2020-2021</p>
                 </div>
                 <div class="education-card">
-                    <h3 class="education-title">Higher National Diploma in Networking & IT Security</h3>
-                    <p class="education-school">Institute of New Technologies (INT), Tunis</p>
-                    <p class="education-date">2015 - 2016</p>
+                    <h3 class="education-title">Brevet de Technicien Supérieur en Réseaux et Sécurité Informatique</h3>
+                    <p class="education-school">Institut des Nouvelles Technologies (INT), Tunis</p>
+                    <p class="education-date">2015-2016</p>
                 </div>
             </div>
         </div>
@@ -590,13 +599,13 @@ index.html
     <section id="contact">
         <div class="container">
             <div class="section-title contact-title">
-                <h2>Get In Touch</h2>
+                <h2>Contactez-moi</h2>
             </div>
-            <p>I'm currently exploring opportunities in Canada/Europe and available for discussions about how I can contribute to your team.</p>
+            <p>Je suis ouvert aux opportunités professionnelles, particulièrement au Canada. N'hésitez pas à me contacter pour discuter de projets ou d'opportunités.</p>
             <div class="contact-methods">
                 <div class="contact-method">
                     <i class="fas fa-phone"></i>
-                    <h3>Phone</h3>
+                    <h3>Téléphone</h3>
                     <p>+216 29 022 759</p>
                 </div>
                 <div class="contact-method">
@@ -616,11 +625,11 @@ index.html
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/Stephane-Raoul" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
-            <p>&copy; 2023 Raoul Kaldjob. All rights reserved.</p>
+            <p>&copy; 2023 Raoul Kaldjob. Tous droits réservés.</p>
         </div>
     </footer>
 </body>
